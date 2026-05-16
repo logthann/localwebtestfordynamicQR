@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dynamic QR Code Web 1</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGW2XSZ251"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HGW2XSZ251');
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 50px;">
+
+    <h1>Hệ Thống Kiểm Tra Dynamic QR</h1>
+    <p>Trạng thái: <strong>Website hoạt động bình thường</strong></p>
+    
+    <div style="margin-top: 30px; background: #f0f0f0; padding: 20px; display: inline-block; border-radius: 8px;">
+        <h3>Các tham số UTM nhận được từ URL:</h3>
+        <p id="utm-info" style="color: green; font-weight: bold;"></p>
+    </div>
+
+    <script>
+        // Đoạn script nhỏ hiển thị UTM ra màn hình điện thoại khi quét QR để bạn đối chiếu nhanh
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('utm_source') || 'Không có';
+        const medium = urlParams.get('utm_medium') || 'Không có';
+        const campaign = urlParams.get('utm_campaign') || 'Không có';
+        
+        document.getElementById('utm-info').innerHTML = 
+            `Source: ${source} <br> Medium: ${medium} <br> Campaign: ${campaign}`;
+    </script>
+</body>
+</html>
